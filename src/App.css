@@ -1,76 +1,65 @@
 .App {
   text-align: center;
   font-family: 'Arial', sans-serif;
-  background-color: #f0f3f7;
+  background-color: black;
   padding: 20px;
 }
 
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image {
-  flex: 1;
-  padding: 20px;
-  text-align: left;
-}
-
-img.img {
-  height: 200px;
-  max-width: 600px;
-  border: 3px solid black;
-}
-
-.info {
-  flex: 1;
-  text-align: left;
-  padding: 20px;
-}
-
-h1 {
-  color: #24292e;
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
 
 .card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
   background-color: #fff;
   border: 1px solid #e1e4e8;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-h2 {
-  color: #0366d6;
-  font-size: 24px;
-  margin: 0;
-  text-align: center;
-  font-size: xx-large;
+
+.img {
+  max-width: 200px; 
   border: 3px solid black;
 }
 
-h3 {
-  color: Red;
+
+.info {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+h1{
+  color: white;
+  font-size: 50px;
+}
+
+
+.heading {
+  color: crimson;
+  font-size: 50px;
   margin: 0;
-  text-align: center;
-  font-size: x-large;
+}
+
+h3 {
+  color:black;
+  margin: 0;
+}
+
+span{
+  color: crimson;
 }
 
 p {
   color: #586069;
-  font-size: 16px;
+  font-size: 35px;
   margin: 10px 0;
   text-align: center;
+  color: crimson;
 }
 
 #loading {
@@ -88,10 +77,10 @@ button {
   cursor: pointer;
   margin: 20px 0;
   font-size: 18px;
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
 }
 
 button:hover {
-  background-color: #0050a6;
-  transform: scale(1.05);
+  background-color: crimson;
+  
 }

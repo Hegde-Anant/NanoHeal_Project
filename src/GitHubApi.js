@@ -1,6 +1,6 @@
-// src/GitHubAPI.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { formatDistanceToNow } from 'date-fns';
 import './App.css';
 
 function GitHubAPI() {
@@ -35,20 +35,21 @@ function GitHubAPI() {
         <p>Loading...</p>
       ) : (
         <div>
-          
-            {repos.map(repo => (
-             <div className='card'>
-                 <h3>Repository Name :</h3> <h2> {repo.name}</h2>
-                <h3>Repository description : </h3><h2>{repo.description}</h2>
-                <h3>Number of stars for the repo :</h3> <h2>{repo.stargazers_count}</h2>
-                <h3>Number of issues for the repo :</h3> <h2>{repo.open_issues_count}</h2>
-                <h3>Username :</h3> <h2>{repo.owner.login}</h2>
-                <h3>Avatar : </h3><img className='img' src={repo.owner.avatar_url} alt="Avatar" />
-                <h3>Created on {repo.created_at.split('T')[0]}</h3>
-                <h3>Code pushed on {repo.pushed_at.split('T')[0]}</h3>
+          {repos.map(repo => (
+            <div className='card'>
+              <div className='image'>
+                <img className='img' src={repo.owner.avatar_url} alt="Avatar" />
               </div>
-            ))}
-          
+              <div className='info'>
+                <div className='heading'>{repo.name}</div>
+                <p>{repo.description}</p>
+                <h3>Stars : <span>{repo.stargazers_count}</span></h3>
+                <h3>Issues : <span>{repo.open_issues_count}</span> </h3>
+                <h3>Username : <span>{repo.owner.login}</span></h3>
+                <h3>Repository created <span>{formatDistanceToNow(new Date(repo.created_at))}</span>  ago by <span>{repo.owner.login}</span></h3>
+              </div>
+            </div>
+          ))}
           <button onClick={loadMore}>Load More</button>
         </div>
       )}
